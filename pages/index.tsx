@@ -7,10 +7,10 @@ import Link from "next/link";
 import urlBuilder from "@sanity/image-url";
 
 const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  projectId: 'qqovccnl',
+  dataset: 'production',
   apiVersion: '2021-10-21',
-  useCdn: false
+  useCdn: process.env.NODE_ENV === 'production',
 });
 
 const builder = urlBuilder(client)
@@ -41,7 +41,7 @@ export default function Home({ posts }: Props) {
           <h1 className="text-6xl max-w-xl font-serif">
             <span className="underline decoration-black decoration-4"> Medium</span> is a place to write, read, and connect.
           </h1>
-          <h2>It's easy and free to post your thinking on any topic and connect with millions of readers.</h2>
+          <h2>Its easy and free to post your thinking on any topic and connect with millions of readers.</h2>
         </div>
 
 
